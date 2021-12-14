@@ -1,0 +1,11 @@
+[
+    {
+        "Name"                  : "newfs_msdos",
+        "License"               : "BSD-2-Clause",
+        "License File"          : "",
+        "Version Number"        : "",
+        "Owner"                 : "Berkeley",
+        "Upstream URL"          : "https://github.com/freebsd/freebsd-src/tree/master/sbin/newfs_msdos",
+        "Description"           : "The newfs_msdos utility creates a FAT12, FAT16, or FAT32 file system on device or file named special, using disktab(5) entry disktype to determine geometry, if required."
+    }
+]
