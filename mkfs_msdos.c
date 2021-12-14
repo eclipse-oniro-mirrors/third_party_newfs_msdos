@@ -33,15 +33,15 @@ static const char rcsid[] =
 #include <sys/param.h>
 #ifdef MAKEFS
 /* In the makefs case we only want struct disklabel */
-#include <sys/disk/bsd.h>
+// #include <sys/disk/bsd.h>
 #else
-#include <sys/fdcio.h>
-#include <sys/disk.h>
-#include <sys/disklabel.h>
-#include <sys/mount.h>
+// #include <sys/fdcio.h>
+// #include <sys/disk.h>
+// #include <sys/disklabel.h>
+// #include <sys/mount.h>
 #endif
 #include <sys/stat.h>
-#include <sys/sysctl.h>
+// #include <sys/sysctl.h>
 #include <sys/time.h>
 
 #include <assert.h>
@@ -104,7 +104,7 @@ static const char rcsid[] =
 struct bs {
     u_int8_t bsJump[3];			/* bootstrap entry point */
     u_int8_t bsOemName[8];		/* OEM name and version */
-} __packed;
+}/* __packed */;
 
 struct bsbpb {
     u_int8_t bpbBytesPerSec[2];		/* bytes per sector */
@@ -119,7 +119,7 @@ struct bsbpb {
     u_int8_t bpbHeads[2];		/* drive heads */
     u_int8_t bpbHiddenSecs[4];		/* hidden sectors */
     u_int8_t bpbHugeSectors[4];		/* big total sectors */
-} __packed;
+}/* __packed */;
 
 struct bsxbpb {
     u_int8_t bpbBigFATsecs[4];		/* big sectors per FAT */
@@ -129,7 +129,7 @@ struct bsxbpb {
     u_int8_t bpbFSInfo[2];		/* file system info sector */
     u_int8_t bpbBackup[2];		/* backup boot sector */
     u_int8_t bpbReserved[12];		/* reserved */
-} __packed;
+}/* __packed */;
 
 struct bsx {
     u_int8_t exDriveNumber;		/* drive number */
@@ -138,7 +138,7 @@ struct bsx {
     u_int8_t exVolumeID[4];		/* volume ID number */
     u_int8_t exVolumeLabel[11];		/* volume label */
     u_int8_t exFileSysType[8];		/* file system type */
-} __packed;
+}/* __packed */;
 
 struct de {
     u_int8_t deName[11];		/* name and extension */
@@ -148,7 +148,7 @@ struct de {
     u_int8_t deMDate[2];		/* last-modified date */
     u_int8_t deStartCluster[2];		/* starting cluster */
     u_int8_t deFileSize[4];		/* size */
-} __packed;
+}/* __packed */;
 
 struct bpb {
     u_int bpbBytesPerSec;		/* bytes per sector */
@@ -916,7 +916,7 @@ compute_geometry_from_file(int fd, const char *fname, struct disklabel *lp)
  * Get disk slice, partition, and geometry information.
  */
 static int
-getdiskinfo(int fd, const char *fname, const char *dtype, __unused int oflag,
+getdiskinfo(int fd, const char *fname, const char *dtype, /* __unused */ int oflag,
 	    struct bpb *bpb)
 {
     struct disklabel *lp, dlp;
@@ -1093,7 +1093,7 @@ setstr(u_int8_t *dest, const char *src, size_t len)
 }
 
 static void
-infohandler(int sig __unused)
+infohandler(int sig /* __unused */)
 {
 
 	got_siginfo = 1;

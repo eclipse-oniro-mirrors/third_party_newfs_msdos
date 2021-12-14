@@ -265,7 +265,7 @@ static void
 usage(void)
 {
     fprintf(stderr,
-	    "usage: %s [ -options ] special [disktype]\n", getprogname());
+	    "usage: [ -options ] special [disktype]\n");
     fprintf(stderr, "where the options are:\n");
 static struct {
     char o;
