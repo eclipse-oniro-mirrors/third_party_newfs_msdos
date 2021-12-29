@@ -46,6 +46,9 @@ newfs_msdos是freebsd/freebsd-src/tree/master/sbin下的一个功能，源代码
 
     https://github.com/freebsd/freebsd-src/tree/master/sbin/newfs_msdos
 
+BSD使用手册链接：
+
+    https://www.freebsd.org/cgi/man.cgi?query=newfs_msdos
 
 #### 如何获取  
   
